@@ -28,3 +28,14 @@ systemctl start spawn-fcgi.service
 
 #-----------------------------------------
 
+# Все что относится к заданию 3
+#-----------------------------------------
+cp /vagrant/httpd.service /usr/lib/systemd/system/httpd.service
+cp /vagrant/httpd-first /etc/sysconfig/httpd-first
+cp /vagrant/httpd-second /etc/sysconfig/httpd-second
+cp /vagrant/first.conf  /etc/httpd/conf/first.conf
+cp /vagrant/second.conf /etc/httpd/conf/second.conf
+
+systemctl start httpd@first
+systemctl start httpd@second
+#----------------------------------------
