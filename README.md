@@ -5,4 +5,17 @@
 
 ***- Создадим [Vagrantfile](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/Vagrantfile) со [скриптом](), который будет копировать файлы [лога(c ключевым словом)](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/watchdog.log), [скрипта для сервиса](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/watchdog.sh), [файл параметров](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/watchdog), [сервис юнит](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/watchlog.service) и [таймер юнит](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/watchlog.timer) в виртуалку и запускать таймер юнит.***
 
-***- Запустим виртуальную маштну и проверим лог messages.***
+***- Запустим виртуальную машину, проверим запущен ли таймер и проверим лог messages.***
+
+```console
+[root@server ~]# systemctl status watchlog.timer
+● watchlog.timer - Run watchlog script every 30 second
+   Loaded: loaded (/etc/systemd/system/watchlog.timer; disabled; vendor preset: disabled)
+   Active: active (elapsed) since Thu 2022-09-08 09:57:47 UTC; 1min 13s ago
+  Trigger: n/a
+
+Sep 08 09:57:47 server systemd[1]: Started Run watchlog script every 30 second.
+
+
+
+```
