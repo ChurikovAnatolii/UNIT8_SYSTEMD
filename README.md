@@ -78,7 +78,10 @@ Sep 08 11:24:29 server systemd[1]: Started Spawn-fcgi startup service by Otus.
 
 ---
 
+### 3. Дополнить юнит-файл apache httpd возможностью запустить несколько
+инстансов сервера с разными конфигами.
 
+***- 
 
 
 
