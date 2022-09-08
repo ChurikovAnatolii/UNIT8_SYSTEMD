@@ -2,7 +2,7 @@
 
 ### 1.Написать service, который будет раз в 30 секунд мониторить лог на предмет наличия ключевого слова.
 
-***- Создадим [Vagrantfile](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/Vagrantfile) со [скриптом](), который будет копировать файлы [лога(c ключевым словом)](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/watchdog.log), [скрипта для сервиса](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/watchdog.sh), [файл параметров](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/watchdog), [сервис юнит](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/watchlog.service) и [таймер юнит](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/watchlog.timer) в виртуалку и запускать таймер юнит.***
+***- Создадим [Vagrantfile](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/Vagrantfile) со [скриптом](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/Unit_script.sh), который будет копировать файлы [лога(c ключевым словом)](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/watchdog.log), [скрипта для сервиса](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/watchdog.sh), [файл параметров](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/watchdog), [сервис юнит](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/watchlog.service) и [таймер юнит](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/watchlog.timer) в виртуалку и запускать таймер юнит.***
 
 ***- Запустим виртуальную машину, проверим запущен ли таймер и проверим лог messages.***
 
@@ -26,7 +26,7 @@ Sep  8 10:41:55 localhost root[4268]: : HERE it is ALERT
 
 ### 2. Из репозитория epel установить spawn-fcgi и переписать init-скрипт на unit-файл (имя service должно называться так же: spawn-fcgi).  
 
-***- Все необходимые действия прописываем в [скрипт](). При старте машины все необходимые пакеты установлены, [файл с настройками spawn-fcgi](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/spawn-fcgi) и [unit файл](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/spawn-fcgi.service) скопированы в нужные папки***
+***- Все необходимые действия прописываем в [скрипт](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/Unit_script.sh). При старте машины все необходимые пакеты установлены, [файл с настройками spawn-fcgi](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/spawn-fcgi) и [unit файл](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/spawn-fcgi.service) скопированы в нужные папки***
 
 ***-Проверим, что все работает***
 
