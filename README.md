@@ -8,14 +8,21 @@
 ***- Запустим виртуальную машину, проверим запущен ли таймер и проверим лог messages.***
 
 ```console
+
 [root@server ~]# systemctl status watchlog.timer
 ● watchlog.timer - Run watchlog script every 30 second
    Loaded: loaded (/etc/systemd/system/watchlog.timer; disabled; vendor preset: disabled)
-   Active: active (elapsed) since Thu 2022-09-08 09:57:47 UTC; 1min 13s ago
-  Trigger: n/a
+   Active: active (waiting) since Thu 2022-09-08 10:41:01 UTC; 2min 54s ago
+  Trigger: Thu 2022-09-08 10:44:15 UTC; 19s left
 
-Sep 08 09:57:47 server systemd[1]: Started Run watchlog script every 30 second.
+Sep 08 10:41:01 server systemd[1]: Started Run watchlog script every 30 second.
 
 
+[root@server ~]# cat /var/log/messages | grep ALERT
+Sep  8 10:41:01 localhost root[4217]: : HERE it is ALERT
+Sep  8 10:41:55 localhost root[4268]: : HERE it is ALERT
 
 ```
+---
+
+### 2. 
