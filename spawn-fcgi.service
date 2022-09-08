@@ -1,7 +1,3 @@
-
-SOCKET=/var/run/php-fcgi.sock
-OPTIONS="-u apache -g apache -s $SOCKET -S -M 0600 -C 32 -F 1 -- /usr/bin/php-cgi"
-[root@ATVVO UNIT8_SYSTEMD]# cat spawn-fcgi.service
 [Unit]
 Description=Spawn-fcgi startup service by Otus
 After=network.target
