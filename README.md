@@ -31,9 +31,52 @@ Sep  8 10:41:55 localhost root[4268]: : HERE it is ALERT
 ***-Проверим, что все работает***
 
 ```console
-ca
+● spawn-fcgi.service - Spawn-fcgi startup service by Otus
+   Loaded: loaded (/etc/systemd/system/spawn-fcgi.service; disabled; vendor preset: disabled)
+   Active: active (running) since Thu 2022-09-08 11:24:29 UTC; 37s ago
+ Main PID: 4504 (php-cgi)
+    Tasks: 33 (limit: 5953)
+   Memory: 18.7M
+   CGroup: /system.slice/spawn-fcgi.service
+           ├─4504 /usr/bin/php-cgi
+           ├─4505 /usr/bin/php-cgi
+           ├─4506 /usr/bin/php-cgi
+           ├─4507 /usr/bin/php-cgi
+           ├─4508 /usr/bin/php-cgi
+           ├─4509 /usr/bin/php-cgi
+           ├─4510 /usr/bin/php-cgi
+           ├─4511 /usr/bin/php-cgi
+           ├─4512 /usr/bin/php-cgi
+           ├─4513 /usr/bin/php-cgi
+           ├─4514 /usr/bin/php-cgi
+           ├─4515 /usr/bin/php-cgi
+           ├─4516 /usr/bin/php-cgi
+           ├─4517 /usr/bin/php-cgi
+           ├─4518 /usr/bin/php-cgi
+           ├─4519 /usr/bin/php-cgi
+           ├─4520 /usr/bin/php-cgi
+           ├─4521 /usr/bin/php-cgi
+           ├─4522 /usr/bin/php-cgi
+           ├─4523 /usr/bin/php-cgi
+           ├─4524 /usr/bin/php-cgi
+           ├─4525 /usr/bin/php-cgi
+           ├─4526 /usr/bin/php-cgi
+           ├─4527 /usr/bin/php-cgi
+           ├─4528 /usr/bin/php-cgi
+           ├─4529 /usr/bin/php-cgi
+           ├─4530 /usr/bin/php-cgi
+           ├─4531 /usr/bin/php-cgi
+           ├─4532 /usr/bin/php-cgi
+           ├─4533 /usr/bin/php-cgi
+           ├─4534 /usr/bin/php-cgi
+           ├─4535 /usr/bin/php-cgi
+           └─4536 /usr/bin/php-cgi
+
+Sep 08 11:24:29 server systemd[1]: Started Spawn-fcgi startup service by Otus.
+
 ```
 
+---
 
 
 
