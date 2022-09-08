@@ -19,7 +19,7 @@ Sep 08 10:41:01 server systemd[1]: Started Run watchlog script every 30 second.
 
 [root@server ~]# cat /var/log/messages | grep ALERT
 Sep  8 10:41:01 localhost root[4217]: : HERE it is ALERT
-Sep  8 10:41:55 localhost root[4268]: : HERE it is ALERT
+Sep  8 10:41:31 localhost root[4268]: : HERE it is ALERT
 
 ```
 ---
@@ -83,6 +83,53 @@ Sep 08 11:24:29 server systemd[1]: Started Spawn-fcgi startup service by Otus.
 ***- С помощью [скрипта](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/Unit_script.sh) скопируем [файл параметров 1](), [файл параметров 2](), [юнит файл](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/httpd.service), [конфиг httpd 1]() и [конфиг httpd 2]() на виртуальную машину, пропишем запуск обоих инстансов через systemctl, проверим работу.
 
 ```console
+[root@server ~]# systemctl status httpd@first
+● httpd@first.service - The Apache HTTP Server
+   Loaded: loaded (/usr/lib/systemd/system/httpd@.service; disabled; vendor preset: disabled)
+   Active: active (running) since Thu 2022-09-08 17:19:49 UTC; 2min 28s ago
+     Docs: man:httpd@.service(8)
+  Process: 4548 ExecStartPre=/bin/chown root.apache /run/httpd/instance-first (code=exited, status=0/SUCCESS)
+  Process: 4547 ExecStartPre=/bin/mkdir -m 710 -p /run/httpd/instance-first (code=exited, status=0/SUCCESS)
+ Main PID: 4550 (httpd)
+   Status: "Running, listening on: port 80"
+    Tasks: 214 (limit: 5953)
+   Memory: 28.2M
+   CGroup: /system.slice/system-httpd.slice/httpd@first.service
+           ├─4550 /usr/sbin/httpd -DFOREGROUND -f conf/first.conf
+           ├─4554 /usr/sbin/httpd -DFOREGROUND -f conf/first.conf
+           ├─4555 /usr/sbin/httpd -DFOREGROUND -f conf/first.conf
+           ├─4556 /usr/sbin/httpd -DFOREGROUND -f conf/first.conf
+           ├─4557 /usr/sbin/httpd -DFOREGROUND -f conf/first.conf
+           └─4558 /usr/sbin/httpd -DFOREGROUND -f conf/first.conf
+
+Sep 08 17:19:49 server systemd[1]: Starting The Apache HTTP Server...
+Sep 08 17:19:49 server httpd[4550]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerN>
+Sep 08 17:19:49 server systemd[1]: Started The Apache HTTP Server.
+Sep 08 17:19:49 server httpd[4550]: Server configured, listening on: port 80
+
+[root@server ~]# systemctl status httpd@second
+● httpd@second.service - The Apache HTTP Server
+   Loaded: loaded (/usr/lib/systemd/system/httpd@.service; disabled; vendor preset: disabled)
+   Active: active (running) since Thu 2022-09-08 17:19:49 UTC; 2min 52s ago
+     Docs: man:httpd@.service(8)
+  Process: 4559 ExecStartPre=/bin/chown root.apache /run/httpd/instance-second (code=exited, status=0/SUCCESS)
+  Process: 4553 ExecStartPre=/bin/mkdir -m 710 -p /run/httpd/instance-second (code=exited, status=0/SUCCESS)
+ Main PID: 4564 (httpd)
+   Status: "Running, listening on: port 8080"
+    Tasks: 214 (limit: 5953)
+   Memory: 27.6M
+   CGroup: /system.slice/system-httpd.slice/httpd@second.service
+           ├─4564 /usr/sbin/httpd -DFOREGROUND -f conf/second.conf
+           ├─4774 /usr/sbin/httpd -DFOREGROUND -f conf/second.conf
+           ├─4775 /usr/sbin/httpd -DFOREGROUND -f conf/second.conf
+           ├─4776 /usr/sbin/httpd -DFOREGROUND -f conf/second.conf
+           ├─4777 /usr/sbin/httpd -DFOREGROUND -f conf/second.conf
+           └─4778 /usr/sbin/httpd -DFOREGROUND -f conf/second.conf
+
+Sep 08 17:19:49 server systemd[1]: Starting The Apache HTTP Server...
+Sep 08 17:19:49 server httpd[4564]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerN>
+Sep 08 17:19:49 server systemd[1]: Started The Apache HTTP Server.
+Sep 08 17:19:49 server httpd[4564]: Server configured, listening on: port 8080
 
 ```
 
