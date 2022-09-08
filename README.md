@@ -80,7 +80,7 @@ Sep 08 11:24:29 server systemd[1]: Started Spawn-fcgi startup service by Otus.
 
 ### 3. Дополнить юнит-файл apache httpd возможностью запустить несколькоинстансов сервера с разными конфигами.
 
-***- С помощью [скрипта](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/Unit_script.sh) скопируем [файл параметров 1](), [файл параметров 2]() и [юнит файл]() на виртуальную машину, пропишем запуск обоих инстансов, проверим работу.
+***- С помощью [скрипта](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/Unit_script.sh) скопируем [файл параметров 1](), [файл параметров 2]() и [юнит файл](https://github.com/ChurikovAnatolii/UNIT8_SYSTEMD/blob/main/httpd.service) на виртуальную машину, пропишем запуск обоих инстансов через systemctl, проверим работу.
 
 ```console
 
