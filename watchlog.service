@@ -1,0 +1,9 @@
+[Unit]
+Description=Watchlog service
+
+
+[Service]
+
+Type=oneshot
+EnvironmentFile=/etc/sysconfig/watchdog
+ExecStart=/etc/opt/watchdog.sh $WORD $LOG
